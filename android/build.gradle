@@ -3,21 +3,18 @@ def safeExtGet(prop, fallback) {
 }
 
 buildscript {
-    if (project == rootProject) {
-        // The Android Gradle plugin is only required when opening the android folder stand-alone.
-        // This avoids unnecessary downloads and potential conflicts when the library is included as a
-        // module dependency in an application project.
-        repositories {
-            google()
-            jcenter()
-        }
-        dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.2'
-        }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath rootProject.ext.has('gradleBuildTools') ? rootProject.ext.get('gradleBuildTools') : 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', 28)
@@ -45,9 +42,18 @@ repositories {
     }
     google()
     jcenter()
+    mavenCentral()
+    maven {
+        url "https://dl.bintray.com/wordpress-mobile/react-native-mirror/"
+    }
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
-    implementation 'com.facebook.react:react-native:+'  // From node_modules
+    if (project == rootProject) {
+        // If this is the root project (e.g. Jitpack), specify a version
+        implementation 'com.facebook.react:react-native:0.60.0-rc.1'
+    } else {
+        //noinspection GradleDynamicVersion
+        api "com.facebook.react:react-native:+"
+    }
 }

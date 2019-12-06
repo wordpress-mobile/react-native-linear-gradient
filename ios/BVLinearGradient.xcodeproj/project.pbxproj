@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64AA15111EF7F31200718508 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
-		64AA15121EF7F31200718508 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
-		B5C1E1CD22084425002D0DFF /* BVLinearGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF2FA320D7DC1F006672AE /* BVLinearGradientLayer.m */; };
-		D6BF2FA420D7DC1F006672AE /* BVLinearGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF2FA320D7DC1F006672AE /* BVLinearGradientLayer.m */; };
-		EF6045F01C4E5D290001F552 /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */; };
-		EF6045F11C4E5D290001F552 /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */; };
+		21A8AA1C239A7C7600B411EC /* BVLinearGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8AA18239A7C7500B411EC /* BVLinearGradient.m */; };
+		21A8AA1D239A7C7600B411EC /* BVLinearGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8AA19239A7C7600B411EC /* BVLinearGradientManager.m */; };
+		21A8AA1E239A7C7600B411EC /* BVLinearGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A8AA1A239A7C7600B411EC /* BVLinearGradientLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,13 +35,13 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBVLinearGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21A8AA16239A7C7500B411EC /* BVLinearGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradient.h; sourceTree = "<group>"; };
+		21A8AA17239A7C7500B411EC /* BVLinearGradientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradientManager.h; sourceTree = "<group>"; };
+		21A8AA18239A7C7500B411EC /* BVLinearGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradient.m; sourceTree = "<group>"; };
+		21A8AA19239A7C7600B411EC /* BVLinearGradientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradientManager.m; sourceTree = "<group>"; };
+		21A8AA1A239A7C7600B411EC /* BVLinearGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradientLayer.m; sourceTree = "<group>"; };
+		21A8AA1B239A7C7600B411EC /* BVLinearGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradientLayer.h; sourceTree = "<group>"; };
 		64AA15081EF7F30100718508 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBVLinearGradient.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6BF2FA220D7DC1F006672AE /* BVLinearGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BVLinearGradientLayer.h; sourceTree = "<group>"; };
-		D6BF2FA320D7DC1F006672AE /* BVLinearGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradientLayer.m; sourceTree = "<group>"; };
-		EF6045EC1C4E5D290001F552 /* BVLinearGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradient.h; sourceTree = "<group>"; };
-		EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradient.m; sourceTree = "<group>"; };
-		EF6045EE1C4E5D290001F552 /* BVLinearGradientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVLinearGradientManager.h; sourceTree = "<group>"; };
-		EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVLinearGradientManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +73,12 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				21A8AA16239A7C7500B411EC /* BVLinearGradient.h */,
+				21A8AA18239A7C7500B411EC /* BVLinearGradient.m */,
+				21A8AA1B239A7C7600B411EC /* BVLinearGradientLayer.h */,
+				21A8AA1A239A7C7600B411EC /* BVLinearGradientLayer.m */,
+				21A8AA17239A7C7500B411EC /* BVLinearGradientManager.h */,
+				21A8AA19239A7C7600B411EC /* BVLinearGradientManager.m */,
 				EF6045EB1C4E5D290001F552 /* BVLinearGradient */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				64AA15081EF7F30100718508 /* libBVLinearGradient.a */,
@@ -85,12 +88,6 @@
 		EF6045EB1C4E5D290001F552 /* BVLinearGradient */ = {
 			isa = PBXGroup;
 			children = (
-				EF6045EC1C4E5D290001F552 /* BVLinearGradient.h */,
-				EF6045ED1C4E5D290001F552 /* BVLinearGradient.m */,
-				EF6045EE1C4E5D290001F552 /* BVLinearGradientManager.h */,
-				EF6045EF1C4E5D290001F552 /* BVLinearGradientManager.m */,
-				D6BF2FA220D7DC1F006672AE /* BVLinearGradientLayer.h */,
-				D6BF2FA320D7DC1F006672AE /* BVLinearGradientLayer.m */,
 			);
 			path = BVLinearGradient;
 			sourceTree = "<group>";
@@ -155,6 +152,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -173,9 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF6045F11C4E5D290001F552 /* BVLinearGradientManager.m in Sources */,
-				EF6045F01C4E5D290001F552 /* BVLinearGradient.m in Sources */,
-				D6BF2FA420D7DC1F006672AE /* BVLinearGradientLayer.m in Sources */,
+				21A8AA1D239A7C7600B411EC /* BVLinearGradientManager.m in Sources */,
+				21A8AA1C239A7C7600B411EC /* BVLinearGradient.m in Sources */,
+				21A8AA1E239A7C7600B411EC /* BVLinearGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AA15111EF7F31200718508 /* BVLinearGradient.m in Sources */,
-				64AA15121EF7F31200718508 /* BVLinearGradientManager.m in Sources */,
-				B5C1E1CD22084425002D0DFF /* BVLinearGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
