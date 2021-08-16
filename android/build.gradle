@@ -1,29 +1,14 @@
-def safeExtGet(prop, fallback) {
-    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+plugins {
+    id "com.android.library"
+    id "maven-publish"
 }
-
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath rootProject.ext.has('gradleBuildTools') ? rootProject.ext.get('gradleBuildTools') : 'com.android.tools.build:gradle:3.5.2'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-    }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion safeExtGet('compileSdkVersion', 28)
-    buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+    compileSdkVersion 30
+
     defaultConfig {
-        minSdkVersion safeExtGet('minSdkVersion', 16)
-        targetSdkVersion safeExtGet('targetSdkVersion', 28)
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 21
+        targetSdkVersion 30
     }
     lintOptions {
         abortOnError false
@@ -31,21 +16,17 @@ android {
 }
 
 repositories {
-    mavenLocal()
-    maven {
-        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-        url "$rootDir/../node_modules/react-native/android"
+    if (project == rootProject) {
+        maven { url "https://a8c-libs.s3.amazonaws.com/android/react-native-mirror" }
+    } else {
+        // When building as a dep, the RN's maven repo is locally in the node_modules folder
+        def nodeModulesPath = "${project.buildDir}/../../node_modules/"
+        maven { url "${nodeModulesPath}/react-native/android" }
     }
-    maven {
-        // Android JSC is installed from npm
-        url "$rootDir/../node_modules/jsc-android/dist"
-    }
+
     google()
     jcenter()
     mavenCentral()
-    maven {
-        url "https://a8c-libs.s3.amazonaws.com/android/react-native-mirror"
-    }
 }
 
 dependencies {
@@ -55,5 +36,17 @@ dependencies {
     } else {
         //noinspection GradleDynamicVersion
         api "com.facebook.react:react-native:+"
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.wordpress-mobile'
+                artifactId = 'react-native-linear-gradient'
+            }
+        }
     }
 }
